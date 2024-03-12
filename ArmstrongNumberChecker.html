@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number Checker</title>
+    <!-- Link to Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto bg-white rounded-md shadow-md p-6">
+            <div class="mb-4">
+                <input class="num w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="Enter a number">
+            </div>
+            <div class="mb-4">
+                <button onclick="checkArmstrong()" class="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none">Check</button>
+            </div>
+            <p id="result" class="text-center"></p>
+        </div>
+    </div>
+</body>
+<script>
+    function checkArmstrong() {
+        var inputField = document.querySelector('.num');
+        var number = parseInt(inputField.value);
+        var numString = number.toString();
+        var length = numString.length;
+        var sum = 0;
+
+        for (let digit of numString) {
+            sum += Math.pow(parseInt(digit), length);
+        }
+
+        var resultDisplay = document.getElementById('result');
+
+        if (sum === number) {
+            resultDisplay.textContent = "This is an Armstrong Number";
+            resultDisplay.classList.remove('text-red-600');
+            resultDisplay.classList.add('text-green-600');
+        } else {
+            resultDisplay.textContent = "This is not an Armstrong Number";
+            resultDisplay.classList.remove('text-green-600');
+            resultDisplay.classList.add('text-red-600');
+        }
+    }
+</script>
+</html>

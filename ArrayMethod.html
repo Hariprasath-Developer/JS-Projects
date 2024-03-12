@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array method</title>
+</head>
+<body>
+   
+    <script>
+        //map()
+        /*const number=[5,6,7,8,9];
+        const unumber =number.map((number)=>{
+            return number+ 10;
+        })
+        console.log(number);
+        console.log(unumber);*/
+
+
+        //filter()
+
+        /*const number=[5,6,7,8,9];
+        const filternumber = number.filter((number1) => {
+           return number1%2==!0 ;
+           });
+           console.log(filternumber);*/
+
+           //reduce()
+
+           /*const number=[5,6,7,8,9,10];
+           const reducenumber = number.reduce((accumulator , currentValue )=>{
+               return accumulator + currentValue;
+               });
+               console.log(reducenumber);*/
+
+
+
+           // reduceRight()
+           
+            /*const arr=[[5,6],[7,8],[9,10]];
+            console.log(arr);
+            const reducefn = (result,current)=> result.concat(current);
+             let final=arr.reduceRight(reducefn);
+             console.log(final);            
+             final = arr.reduce(reducefn);
+             console.log(final);*/
+
+             //push() 
+
+             /*let arr = [ "ram" , "hari"];
+             console.log(arr);
+             let  pushdata = arr.push("kumar");
+             console.log(arr)
+             console.log(arr.length)
+
+             //pop()
+             let popdata = arr.pop();
+             console.log(arr)
+             console.log(popdata);
+
+             //unshift()
+
+             arr.unshift("Ram Kumar");
+             console.log(arr);
+
+             //shift
+
+             let removedshift= arr.shift()
+             console.log(arr);
+             console.log(removedshift);*/
+        
+             //slice()
+
+             /*let animals=["cat","dog","elephant","lion","tiger"]
+             console.log(animals)
+             console.log(animals.slice(2));
+             console.log(animals.slice(2,4));
+             console.log(animals.slice(2,-1));
+             console.log(animals.slice(-3,-1))
+             console.log(animals.slice());*/
+
+             //Splice()
+
+             /*let weeks =['sun','mon','tue','wed','thu'];
+             console.log(weeks);
+             weeks.splice(5,0,'fri')
+             console.log(weeks);
+             weeks.splice(6,0,'sat');
+             console.log(weeks);
+             weeks.splice(1,3);
+             console.log(weeks);
+             weeks.splice(-1);
+             console.log(weeks);*/
+
+             //concat
+
+             /*let programming = [ 'java', 'python' ];
+             console.log(programming);
+             let scripting   = [ '.net', 'php'     ];
+             console.log(scripting);
+             let languages   = programming.concat(scripting);
+             console.log(languages);
+             let one = languages.concat('sql');
+             console.log(one);*/
+
+             //sort()
+
+             /*let number=[9,8,7,6,5];
+             number.sort();
+             console.log(number);*/
+
+             /*const numbers = [50,36,12,29,48]
+numbers. sort();
+console.log(numbers);
+const results = [
+{name: 'Abinsha',marks: 60},
+{name: 'Rashmi',marks: 70},
+{name: 'Sherlin',marks: 80}
+];
+results.sort((a, b)=> a.marks - b.marks);
+console.log(results);
+
+
+results.sort((a, b) => {
+    // Convert names to lowercase for case-insensitive comparison
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;});
+console.log(results);*/
+
+     // reverse()
+
+     /*const number = [9,10,7,6,5];
+     number.reverse();
+     console.log(number);*/
+
+     //some
+
+     /*const number = [9,10,7,6,5];
+     const checkNumber= (num) => num % 2 === 0 ;
+     console.log(number.some(checkNumber));//true
+     const checkNumber1= (num) => num > 100 ;
+     console.log(number.some(checkNumber1));*/
+
+     // every
+     /*const number = [9,10,7,6,5];
+     const checkNumber= (num) => num % 2 === 0 ;
+     console.log(number.every(checkNumber));//false
+     const checkNumber1= (num) => num > 1 ;
+     console.log(number.every(checkNumber1));*/
+
+     //fill()
+
+     /*let arr=[1,2,3,4,5];
+     arr.fill('X',1,3);
+     console.log(arr);
+
+     let arr1=[1,2,3,4,5];
+     arr1.fill(7,1);
+     console.log(arr1);*/
+
+     //flat()
+     /*const arr = [1,[2],3,[4,[5,6],7],8];
+     console.log(arr.flat());
+
+     const arr1 =[1,[2],[3,[4,5,6,7]],8];
+     console.log(arr1.flat(2));
+
+     //infinity for unknown depth
+
+     const arr2= [[1,2], [3,[[4],[5]]]];
+     console.log(arr2.flat()) 
+     console.log(arr2.flat(Infinity));*/
+
+    // flatMap()
+
+    //using Map & falt method
+
+    /*let arr =[ 'car,plane','apple,banana','cherry,date'];
+    const new1 = arr.map(ele => ele.split(','));
+    console.log(new1);
+    console.log(new1.flat());
+    
+    //using flatMap()
+    console.log(arr.flatMap(ele=>ele.split(',')));*/
+
+    //array.from()
+    /*let obj={a:1,b:2};
+    let myArr=Object.entries(obj);
+    console.log(myArr.flat());
+
+    //Array.of()
+    let arr= {1:'hari', 2:true, a:1};
+    console.log(arr);
+    console.log(Array.of(arr).flat());
+    console.log(Array.of(1,'hari', true, {a:1}));*/
+
+    //Array.isArray()
+   /* console.log(Array.isArray('hello world'));
+    console.log(Array.isArray([1,2,3]));*/
+
+    //date()
+
+    /*console.log(Date.now());
+
+    const date= new Date().getDate();
+    console.log(date);
+
+    const Time = new Date().getTime();
+    console.log(Time);
+
+    const hours= new Date().getHours();
+    console.log(hours);
+
+    const month = new Date().getMonth()+1;
+    console.log(month);
+
+    const Year = new Date().getFullYear();
+    console.log(Year);
+
+    const Day = new Date().getDay();
+    const Days = ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    console.log(Days[Day]);*/
+
+    </script>
+</body>
+</html>
+    
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+
+            
+
+    </script>
+</body>
+</html>
