@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+</head>
+<style>
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800);
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  background: #e5e5e5;
+  cursor: pointer;
+}
+.outerclock{
+  width: 350px;
+  height: 350px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  box-shadow:  6px 6px 8px gray,-6px -6px 8px white;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 35%;
+}
+.innerclock{
+  width: 280px;
+  height: 280px;
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("img/nature.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.time p{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Arial;
+  text-shadow: 1px 1px 2px gray;
+}
+.time p:nth-child(1){
+  position: absolute;
+  left: 42%;
+  top: -10%;
+}
+.time p:nth-child(2){
+  position: absolute;
+  left: -8%;
+  top: 40%;
+}
+.time p:nth-child(3){
+  position: absolute;
+  left: 48%;
+  bottom: -12%;
+}
+.time p:nth-child(4){
+  position: absolute;
+  right: -8%;
+  top: 36%;
+}
+#dot{
+  width: 20px;
+  height: 20px;
+  background:black;
+  border-radius: 50%; 
+  position: absolute;
+  top: 46%;
+  left: 46%;
+  z-index: 4;
+}
+#hour{
+  width: 10px;
+  height: 75px;
+  background: #00E5FF;
+  position: absolute;
+  top: 24%;
+  left: 47%;
+  border-radius: 50% 50% 0px 0px;
+  transform-origin: bottom;
+  z-index: 2;
+}
+#min{
+  width: 8px;
+  height: 110px;
+  background: yellow;
+  position: absolute;
+  top: 11%;
+  left: 47%;
+  border-radius: 50% 50% 0px 0px;
+  transform-origin: bottom;
+  z-index: 1;
+}
+#sec{
+  width: 5px;
+  height: 120px;
+  background: red;
+  position: absolute;
+  top: 8%;
+  left: 48%;
+  transform-origin: bottom;
+  z-index: 3;
+}
+</style>
+<body>
+    <div class="outerclock">
+		<div class="innerclock">
+			<div id="dot"></div>
+			
+				<div id="hour"></div>
+				<div id="min"> </div>
+				<div id="sec"></div>
+			
+			<div class="time">
+				<p>12</p>
+				<p>9</p>
+				<p>6</p>
+				<p>3</p>
+			</div>
+		</div>
+	</div>
+    <script>
+setInterval(()=>{
+  d=new Date();
+  hhour=d.getHours();
+  hmin=d.getMinutes();
+  hsec=d.getSeconds();
+
+  hourrot=30*hhour+hmin/2;
+  minrot=6*hmin;
+  secrot=6*hsec;
+
+  sec.style.transform=`rotate(${secrot}deg)`;
+  hour.style.transform=` rotate(${hourrot}deg)`;
+  min.style.transform= `rotate(${minrot}deg)`;
+
+},1000);
+    </script>
+</body>
+</html>
